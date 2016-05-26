@@ -1,0 +1,6 @@
+{
+  "name": "Barracks",
+  "tagline": "Painless IoT Fleet Management",
+  "body": "### Why Barracks ?\r\n[Barracks](http://barracks.io) provides painless IoT fleet management.\r\nWether you are building your first connected object or have tens of millions of devices, we will help you manage your software updates.\r\n\r\n### Barracks SDKs\r\nWe are happy to offer you free and open-source SDKs for the many platforms you may be using !\r\nHave a look at our awesome documentation and start integrating our service in your apps :\r\n* [Android Client](https://github.com/barracksiot/android-client)\r\n* [iOS / OSX Client](https://github.com/barracksiot/ios-osx-client)\r\n\r\n### Bug reports and enhancements\r\nIf you happen to find a bug, or feel the need to have new features in our SDKs, feel free to submit an issue or a pull request in the related project.\r\n\r\n### Support\r\nWe will not provide support through Github, though feel free to ask for help on [StackOverflow, using the 'barracks' tag.](http://stackoverflow.com/questions/tagged/barracks)",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

@@ -1470,7 +1470,7 @@ try {
 
 
 
-                                                <h3> Status: 0 - Authentication error </h3>
+                                                <h3> Default - Authentication error </h3>
 
                                                 <ul class="nav nav-tabs nav-tabs-examples" >
 
@@ -1875,7 +1875,7 @@ try {
 
 
 
-                                                <h3> Status: 0 - Unexpected error </h3>
+                                                <h3> Default - Unexpected error </h3>
 
                                                 <ul class="nav nav-tabs nav-tabs-examples" >
 
@@ -2284,7 +2284,7 @@ try {
 
 
 
-                                                <h3> Status: 0 - Authentication error </h3>
+                                                <h3> Default - Authentication error </h3>
 
                                                 <ul class="nav nav-tabs nav-tabs-examples" >
 
@@ -2753,7 +2753,7 @@ try {
 
 
 
-                                                <h3> Status: 0 - Authentication error </h3>
+                                                <h3> Default - Authentication error </h3>
 
                                                 <ul class="nav nav-tabs nav-tabs-examples" >
 
@@ -3250,7 +3250,7 @@ try {
 
 
 
-                                                <h3> Status: 0 - Unexpected error </h3>
+                                                <h3> Default - Unexpected error </h3>
 
                                                 <ul class="nav nav-tabs nav-tabs-examples" >
 
@@ -3715,7 +3715,7 @@ try {
 
 
 
-                                                <h3> Status: 0 - Authentication error </h3>
+                                                <h3> Default - Authentication error </h3>
 
                                                 <ul class="nav nav-tabs nav-tabs-examples" >
 
@@ -3868,7 +3868,7 @@ try {
                                             <div class="tab-content">
                                                 <div class="tab-pane active" id="examples-Update-memberUpdatesUuidStatusDesiredstatusPut-0-curl">
                                                     <pre class="prettyprint"><code class="language-bsh">
-curl -X <span style="text-transform: uppercase;">put</span> "https://app.barracks.io/api/member/updates/{uuid}/status/{desiredstatus}?uuid=&desiredstatus="
+curl -X <span style="text-transform: uppercase;">put</span> "https://app.barracks.io/api/member/updates/{uuid}/status/{desiredstatus}"
 
 
 </code></pre>
@@ -4042,12 +4042,7 @@ try {
 
 
 
-
-
-
-
-
-                                                <div class="methodsubtabletitle">Query parameters</div>
+                                                <div class="methodsubtabletitle">Path parameters</div>
                                                 <table id="methodsubtable">
                                                     <tr>
                                                         <th width="150px">Name</th>
@@ -4062,7 +4057,7 @@ try {
 												$(document).ready(function() {
 													var schemaWrapper = {
   "name" : "uuid",
-  "in" : "query",
+  "in" : "path",
   "description" : "uuid of the update to be published",
   "required" : true,
   "type" : "string"
@@ -4095,7 +4090,7 @@ try {
 												$(document).ready(function() {
 													var schemaWrapper = {
   "name" : "desiredstatus",
-  "in" : "query",
+  "in" : "path",
   "description" : "new status of the update (published, or archived)",
   "required" : true,
   "type" : "string"
@@ -4121,6 +4116,11 @@ try {
 </tr>
 
                                                 </table>
+
+
+
+
+
 
                                             <h2>Responses</h2>
 
@@ -4200,7 +4200,7 @@ try {
 
 
 
-                                                <h3> Status: 0 - Unexpected error </h3>
+                                                <h3> Default - Unexpected error </h3>
 
                                                 <ul class="nav nav-tabs nav-tabs-examples" >
 
@@ -4307,16 +4307,14 @@ try {
             <div id="footer">
                 <div id="api-_footer">
                     <p>Suggestions, contact, support and error reporting;
-                            <div class="app-desc">Information URL: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
-                            <div class="app-desc">Contact Info: <a href="hello@helloreverb.com">hello@helloreverb.com</a></div>
+                            <div class="app-desc">Information URL: <a href="http://barracks.io">http://barracks.io</a></div>
+                            <div class="app-desc">Contact Info: <a href="contact@barracks.io">contact@barracks,io</a></div>
                     </p>
-                        <div class="license-info">All rights reserved</div>
-                        <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
                 </div>
             </div>
             <div id="generator">
                 <div class="content">
-                    Generated 2016-12-02T19:12:31.278Z
+                    Generated 2016-12-02T19:25:07.573Z
                 </div>
             </div>
         </div>

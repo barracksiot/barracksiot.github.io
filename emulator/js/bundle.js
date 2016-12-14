@@ -52,23 +52,20 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	var defaultDeviceImage = 'data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg==';
 	var initialDevices = [{
 	  unitId: 'emulatedDevice1',
 	  versionId: 'v.0.0.0',
-	  customClientData: { 'plop': 2 },
-	  image: 'data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=='
+	  customClientData: { 'plop': 2 }
 	}, {
 	  unitId: 'emulatedDevice2',
-	  versionId: 'v.0.0.0',
-	  image: 'data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=='
+	  versionId: 'v.0.0.0'
 	}, {
 	  unitId: 'emulatedDevice3',
-	  versionId: 'v.0.0.0',
-	  image: 'data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=='
+	  versionId: 'v.0.0.0'
 	}, {
 	  unitId: 'emulatedDevice4',
-	  versionId: 'v.0.0.0',
-	  image: 'data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=='
+	  versionId: 'v.0.0.0'
 	}];
 	
 	var deviceCount = initialDevices.length;
@@ -80,6 +77,8 @@
 	
 	  var apiKey = document.getElementById('apiKey').value;
 	  var baseUrl = document.getElementById('baseUrl').value;
+	
+	  document.getElementById('start-button').value = 'Reset Emulator';
 	
 	  if (emulator) {
 	    reset();
@@ -119,11 +118,12 @@
 	}
 	
 	function callbackOnBeforeDeviceCheckUpdate(unitId) {
-	  document.querySelector('#' + unitId + ' h2').style['color'] = 'green';
+	  document.querySelector('#' + unitId + ' div div.caption p.last-ping span').innerHTML = getFormattedNow();
 	}
 	
-	function callbackOnAfterDeviceCheckUpdate(unitId) {
-	  document.querySelector('#' + unitId + ' h2').style['color'] = 'black';
+	function getFormattedNow() {
+	  var now = new Date();
+	  return now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear() + ' ' + now.getHours() + ':' + now.getMinutes() + ':' + (now.getSeconds() < 10 ? '0' + now.getSeconds() : now.getSeconds());
 	}
 	
 	function initializeDevices() {
@@ -131,25 +131,30 @@
 	    addDevice(device);
 	  });
 	
+	  deviceCount = initialDevices.length;
+	
 	  emulator.onUpdateAvailable(callbackUpdateAvailable);
 	  emulator.onDeviceChange(callbackDeviceChange);
 	  emulator.onBeforeDeviceCheckUpdate(callbackOnBeforeDeviceCheckUpdate);
-	  emulator.onAfterDeviceCheckUpdate(callbackOnAfterDeviceCheckUpdate);
 	
 	  emulator.start();
 	}
 	
 	function addDevice(device) {
-	  var template = '\n    <div id="' + device.unitId + '">\n      <h2>' + device.unitId + '</h2>\n      <p>' + device.versionId + '</p>\n      <img src="' + device.image + '" />\n    </div>\n  ';
+	  if (!device.image) {
+	    device.image = defaultDeviceImage;
+	  }
+	  var template = '\n    <div id="' + device.unitId + '" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">\n      <div class="thumbnail">\n        <img src="' + device.image + '" class="img-responsive" />\n        <div class="caption">\n          <h2>' + device.unitId + '</h2>\n          <p>' + device.versionId + '</p>\n          <p class="last-ping">Last check: <span>never</span></p>  \n        </div>\n      </div>\n    </div>\n  ';
 	
 	  document.getElementById('devices').innerHTML = document.getElementById('devices').innerHTML + template;
+	
 	  emulator.addDevice(device);
 	  allDevices.push();
 	}
 	
 	function updateDevice(device) {
-	  document.querySelector('#' + device.unitId + ' img').src = device.image;
-	  document.querySelector('#' + device.unitId + ' p').innerHTML = device.versionId;
+	  document.querySelector('#' + device.unitId + ' div img').src = device.image;
+	  document.querySelector('#' + device.unitId + ' div p').innerHTML = device.versionId;
 	}
 	
 	document.addEventListener('DOMContentLoaded', function () {
@@ -196,7 +201,7 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	var CHECK_UPDATE_FREQUENCE = 2000;
+	var CHECK_UPDATE_FREQUENCE = 3500;
 	var ON_UPDATE_AVAILABLE_EVENT = 'on_update_available';
 	var ON_DEVICE_CHANGE_EVENT = 'on_device_change';
 	var ON_BEFORE_DEVICE_CHECK_UPDATE_EVENT = 'on_before_device_check_update';
@@ -220,7 +225,9 @@
 	
 	function checkUpdates(emulator) {
 	  devices.forEach(function (device) {
-	    checkUpdateForDevice(emulator, device);
+	    setTimeout(function () {
+	      checkUpdateForDevice(emulator, device);
+	    }, Math.floor(Math.random() * 800) + 150);
 	  });
 	
 	  if (checkForUpdate) {

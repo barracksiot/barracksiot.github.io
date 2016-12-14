@@ -3,18 +3,36 @@
   <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="js/bundle.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
-    <div>
-      <form name="barracks-info" id="barracks-info">
-        <label for="apiKey">API Key</label>
-        <input type="text" name="apiKey" id="apiKey" value="2d26afb7a82d967adec0babc6d434426aea35206c82d94eaa7c23e9e36c50d18" />
-        <label for="baseUrl">Barracks URL</label>
-        <input type="text" name="baseUrl" id="baseUrl" value="https://barracks.ddns.net" />
-        <input type="submit" value="OK" />
-      </form>
+    <div class="container">
+      <div>
+        <form name="barracks-info" id="barracks-info" class="form-horizontal">
+          <div class="form-group">
+            <label for="apiKey" class="col-sm-2 control-label">API Key</label>
+            <div class="col-sm-10">
+              <input type="text" name="apiKey" id="apiKey" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="baseUrl" class="col-sm-2 control-label">Barracks URL</label>
+            <div class="col-sm-10">
+              <input type="text" name="baseUrl" id="baseUrl" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10"">
+              <input type="submit" value="Start Emulator" id="start-button"/>
+              <input id="add-device-button" type="button" value="Add device" />
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    <div><input id="add-device-button" type="button" value="Add device" /></div>
-    <div id="devices"></div>
+    <div class="container-fluid">
+      <div id="devices" class="row">
+      </div>
+    </div>
   </body>
 </html>

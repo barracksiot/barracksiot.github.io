@@ -60,7 +60,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var defaultDeviceImage = '/emulator/images/brain.png';
+	var defaultDeviceImage = '/images/brain.png';
 	var initialDevices = [{
 	  unitId: 'Cyber_Brain_1',
 	  versionId: '0.0.1',
@@ -105,7 +105,7 @@
 	function addDevice(device) {
 	  ++deviceCount;
 	  if (device == null) {
-	    createDeviceTemplate({ unitId: 'Cyber_Brain_' + deviceCount, versionId: '0.0.1', customClientData: '{}' });
+	    createDeviceTemplate({ unitId: 'Cyber_Brain_' + deviceCount, versionId: '0.0.1' });
 	  } else {
 	    createDeviceTemplate(device);
 	  }
@@ -6757,14 +6757,21 @@
 	module.exports = {
 		"_args": [
 			[
-				"tough-cookie@~2.3.0",
-				"/home/pod/DEV/web-devices-emulator/node_modules/request"
+				{
+					"raw": "tough-cookie@~2.3.0",
+					"scope": null,
+					"escapedName": "tough-cookie",
+					"name": "tough-cookie",
+					"rawSpec": "~2.3.0",
+					"spec": ">=2.3.0 <2.4.0",
+					"type": "range"
+				},
+				"/Users/bargenson/Development/barracks/web-devices-emulator/node_modules/request"
 			]
 		],
 		"_from": "tough-cookie@>=2.3.0 <2.4.0",
 		"_id": "tough-cookie@2.3.2",
 		"_inCache": true,
-		"_installable": true,
 		"_location": "/tough-cookie",
 		"_nodeVersion": "7.0.0",
 		"_npmOperationalInternal": {
@@ -6772,16 +6779,17 @@
 			"tmp": "tmp/tough-cookie-2.3.2.tgz_1477415232912_0.6133609430398792"
 		},
 		"_npmUser": {
-			"email": "jstash@gmail.com",
-			"name": "jstash"
+			"name": "jstash",
+			"email": "jstash@gmail.com"
 		},
 		"_npmVersion": "3.10.8",
 		"_phantomChildren": {},
 		"_requested": {
-			"name": "tough-cookie",
 			"raw": "tough-cookie@~2.3.0",
-			"rawSpec": "~2.3.0",
 			"scope": null,
+			"escapedName": "tough-cookie",
+			"name": "tough-cookie",
+			"rawSpec": "~2.3.0",
 			"spec": ">=2.3.0 <2.4.0",
 			"type": "range"
 		},
@@ -6792,10 +6800,10 @@
 		"_shasum": "f081f76e4c85720e6c37a5faced737150d84072a",
 		"_shrinkwrap": null,
 		"_spec": "tough-cookie@~2.3.0",
-		"_where": "/home/pod/DEV/web-devices-emulator/node_modules/request",
+		"_where": "/Users/bargenson/Development/barracks/web-devices-emulator/node_modules/request",
 		"author": {
-			"email": "jstashewsky@salesforce.com",
-			"name": "Jeremy Stashewsky"
+			"name": "Jeremy Stashewsky",
+			"email": "jstashewsky@salesforce.com"
 		},
 		"bugs": {
 			"url": "https://github.com/salesforce/tough-cookie/issues"
@@ -6844,13 +6852,13 @@
 		"homepage": "https://github.com/salesforce/tough-cookie",
 		"keywords": [
 			"HTTP",
-			"RFC2965",
-			"RFC6265",
 			"cookie",
-			"cookiejar",
 			"cookies",
+			"set-cookie",
+			"cookiejar",
 			"jar",
-			"set-cookie"
+			"RFC6265",
+			"RFC2965"
 		],
 		"license": "BSD-3-Clause",
 		"main": "./lib/cookie",
@@ -65464,14 +65472,21 @@
 	module.exports = {
 		"_args": [
 			[
-				"prettyjson@^1.2.1",
-				"/home/pod/DEV/web-devices-emulator"
+				{
+					"raw": "prettyjson@^1.2.1",
+					"scope": null,
+					"escapedName": "prettyjson",
+					"name": "prettyjson",
+					"rawSpec": "^1.2.1",
+					"spec": ">=1.2.1 <2.0.0",
+					"type": "range"
+				},
+				"/Users/bargenson/Development/barracks/web-devices-emulator"
 			]
 		],
 		"_from": "prettyjson@>=1.2.1 <2.0.0",
 		"_id": "prettyjson@1.2.1",
 		"_inCache": true,
-		"_installable": true,
 		"_location": "/prettyjson",
 		"_nodeVersion": "6.3.1",
 		"_npmOperationalInternal": {
@@ -65479,16 +65494,17 @@
 			"tmp": "tmp/prettyjson-1.2.1.tgz_1480610482070_0.8566325143910944"
 		},
 		"_npmUser": {
-			"email": "rafeca@gmail.com",
-			"name": "rafeca"
+			"name": "rafeca",
+			"email": "rafeca@gmail.com"
 		},
 		"_npmVersion": "3.10.3",
 		"_phantomChildren": {},
 		"_requested": {
-			"name": "prettyjson",
 			"raw": "prettyjson@^1.2.1",
-			"rawSpec": "^1.2.1",
 			"scope": null,
+			"escapedName": "prettyjson",
+			"name": "prettyjson",
+			"rawSpec": "^1.2.1",
 			"spec": ">=1.2.1 <2.0.0",
 			"type": "range"
 		},
@@ -65499,10 +65515,10 @@
 		"_shasum": "fcffab41d19cab4dfae5e575e64246619b12d289",
 		"_shrinkwrap": null,
 		"_spec": "prettyjson@^1.2.1",
-		"_where": "/home/pod/DEV/web-devices-emulator",
+		"_where": "/Users/bargenson/Development/barracks/web-devices-emulator",
 		"author": {
-			"email": "rafeca@gmail.com",
 			"name": "Rafael de Oleza",
+			"email": "rafeca@gmail.com",
 			"url": "https://github.com/rafeca"
 		},
 		"bin": {
@@ -65532,10 +65548,10 @@
 		"gitHead": "cd2d53156cb9b457133a0eeeadb55913c34d5207",
 		"homepage": "http://rafeca.com/prettyjson",
 		"keywords": [
+			"json",
 			"cli",
-			"colors",
 			"formatting",
-			"json"
+			"colors"
 		],
 		"license": "MIT",
 		"main": "./lib/prettyjson",

@@ -60,7 +60,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var defaultDeviceImage = '/images/brain.png';
+	var defaultDeviceImage = 'images/brain.png';
 	var initialDevices = [{
 	  unitId: 'Cyber_Brain_1',
 	  versionId: '0.0.1',

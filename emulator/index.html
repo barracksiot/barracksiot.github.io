@@ -14,6 +14,9 @@
         <h1>
           Barracks Emulator
         </h1>
+        <div class="actions help-button" data-action="help-button">
+          <img src="images/help.png" alt="Need help?" />
+        </div>
       </header>
       <main>
         <form class="form form--settings">
@@ -24,6 +27,9 @@
             <div class="input">
               <input type="text" name="baseUrl" id="baseUrl" value="https://app.barracks.io" required />
             </div>
+            <div class="help">
+              You don't need to change this value unless you have a custom Barracks endpoint. If you're unsure, let this filed unchanged.
+            </div>
           </div>
           <div class="form__item form__item--input">
             <label for="apiKey">
@@ -32,6 +38,9 @@
             <div class="input">
               <textarea type="text" name="apiKey" id="apiKey" rows="2" required></textarea>
             </div>
+            <div class="help">
+              Copy and paste your Barracks API key in this field. You'll find it <a href="https://app.barracks.io/account">here</a>.
+          </div>
           </div>
           <div class="form__submit">
             <div class="btn-group">

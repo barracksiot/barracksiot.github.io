@@ -250,7 +250,7 @@ main {
     position: absolute;
     right: 5%;
     transform: translateY(-50%);
-    width: 350px;
+    width: 20%;
     display: none; }
     .form .form__item .help a {
       color: white;
